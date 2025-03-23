@@ -1,0 +1,18 @@
+# web server
+server:
+  port: 9080
+  servlet:
+    context-path: /myapp
+
+# application
+spring:
+  application:
+    name: hello-log4j2
+
+
+# logging
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.example.learn: DEBUG

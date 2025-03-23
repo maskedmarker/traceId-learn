@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <!-- 上面的status指的是Log4j 自身内部的日志级别，可以帮助调试 Log4j 的配置问题 -->
+
+    <Properties>
+        <Property name="LOG_PATTERN">[%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ}] [%-5p] [%t] [traceId:%X{traceId}][%c]:[%M:%L] - %m%n</Property>
+    </Properties>
+
+    <!-- 定义日志上下文 -->
+    <Appenders>
+        <!-- 控制台输出 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+    </Appenders>
+
+    <!-- 配置日志记录器 -->
+    <Loggers>
+        <!-- 设置根日志记录器 -->
+        <Root>
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
